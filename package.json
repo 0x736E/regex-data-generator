@@ -1,0 +1,22 @@
+{
+  "name": "regex-data-generator",
+  "version": "1.0.0",
+  "description": "generate sample data files from regex",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate": "node ./scripts/generate.js"
+  },
+  "author": "Sean Nicholls seannicholls@gmail.com",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "process.argv": "^0.6.0",
+    "randexp": "^0.5.3",
+    "uuid": "^9.0.0"
+  }
+}

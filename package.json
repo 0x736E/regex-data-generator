@@ -16,7 +16,6 @@
   "dependencies": {
     "colors": "^1.4.0",
     "process.argv": "^0.6.0",
-    "randexp": "^0.5.3",
-    "uuid": "^9.0.0"
+    "randexp": "^0.5.3"
   }
 }

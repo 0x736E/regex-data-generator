@@ -21,6 +21,7 @@ npm run generate -- --help
 
 usage: generate [options]
   --help          : this message
+  --inputFile     : input file containing regex patterns (javascript)
   --selector      : select a specific pattern, by name
   --index         : select a specific pattern, by Index
   --count         : number of samples to generate

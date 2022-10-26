@@ -1,8 +1,4 @@
-const PATTERNS = require('../config/patterns.js');
-const PATTERN_KEYS = Object.keys(PATTERNS);
-
 const { RegexDataGenerator } = require('../lib/index.js');
-
 const colors = require('colors');
 const argv = require("process.argv");
 const processArgv = argv(process.argv.slice(2));
@@ -10,19 +6,14 @@ const processArgv = argv(process.argv.slice(2));
 function validateConfig() {
 
   let config = processArgv({
-    selector: null,
-    index: null,
-    count: 100,
-    format: null,
-    outputDir: null,
-    separateFiles: null,
-    silent: false,
+    count: 10
   });
 
   if ( config.help ) {
 
     let msg = `usage: generate [options]
   --help          : this message
+  --inputFile     : input file containing regex patterns (javascript)
   --selector      : select a specific pattern, by name
   --index         : select a specific pattern, by Index
   --count         : number of samples to generate
@@ -35,6 +26,9 @@ function validateConfig() {
     console.log(msg);
     process.exit(0);
   }
+
+  PATTERNS = (config.inputFile ? require(config.inputFile) : require('../config/index.js'));
+  var PATTERN_KEYS = Object.keys(PATTERNS);
 
   if ( config.index !== null ) {
 

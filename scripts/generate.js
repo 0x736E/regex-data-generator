@@ -73,6 +73,7 @@ function printMessage( options ) {
   let count = '' + (options.count != null ? options.count : RegexDataGenerator.SampleCount );
   let selector = ('"' + (options.selector == null ? 'All' : options.selector) + '"');
   let format = (options.format ? options.format : 'JSON');
+  format = format instanceof Array ? options.format.join(',') : options.format;
 
   let msg = '';
   msg += 'Generating ' + count.yellow + ' samples of ' + selector.green + ' as ' + format.cyan;
